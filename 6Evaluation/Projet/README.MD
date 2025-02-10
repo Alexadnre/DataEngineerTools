@@ -7,6 +7,7 @@
 ## Sommaire
 
 1. [🏗️ Architecture du projet](#-architecture-du-projet)
+    - [🧩 Schéma global](#🧩-Schéma-global)
 2. [⚙️ Installation & Configuration](#⚙️-installation--configuration)
    - [1️⃣ Prérequis](#1️⃣-prérequis)
    - [2️⃣ Installation](#2️⃣-installation)
@@ -38,8 +39,9 @@ Le projet repose sur plusieurs composants interconnectés :
 - **Mongo-to-Elastic** : transfert les données de MongoDB vers Elasticsearch.
 - **Elasticsearch-db** : moteur de recherche et d'analyse pour afficher les historiques de prix.
 - **Kibana** : visualisation avancée des données.
+---
+### 🧩 Schéma global
 
-### 📌 Schéma global 
 ![](./interface/static/img/Diagramme.png)
 
 ---
