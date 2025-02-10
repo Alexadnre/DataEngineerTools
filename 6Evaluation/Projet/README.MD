@@ -4,7 +4,7 @@
 
 > Un projet permettant de scrapper les produits Amazon, en recherchant un mot-clé ou un lien, pour suivre l’évolution des prix et détecter les opportunités.
 
-## 🏗️ Architecture du projet
+# 🏗️ Architecture du projet
 
 Le projet repose sur plusieurs composants interconnectés :
 
@@ -21,7 +21,7 @@ Le projet repose sur plusieurs composants interconnectés :
 
 ---
 
-## ⚙️ Installation & Configuration
+# ⚙️ Installation & Configuration
 
 ### 1️⃣ Prérequis
 
@@ -48,7 +48,7 @@ docker-compose up --build -d
 
 ---
 
-## 🖥️ Interface Utilisateur
+# 🖥️ Interface Utilisateur
 
 L'interface graphique possède **deux pages** :
 
@@ -70,7 +70,7 @@ L'interface graphique possède **deux pages** :
 
 ---
 
-## 🔍 Détails Techniques
+# 🔍 Détails Techniques
 
 ### 📌 Scraping Amazon
 
@@ -170,7 +170,7 @@ with db.watch(pipeline) #...
 
 ---
 
-## 📡 API & Requêtes
+# 📡 API & Requêtes
 
 L’interface utilise plusieurs **endpoints** :
 
@@ -191,7 +191,7 @@ L’interface utilise plusieurs **endpoints** :
 ```
 ---
 
-## 🛠️ Tests & Développement
+# 🛠️ Tests & Développement
 
 ### Fichiers de test :
 
@@ -261,14 +261,13 @@ Après l'exécution du scrapping, vous pouvez consulter la liste des produits sc
 
 Une fonctionnalité en développement permet de recevoir des alertes lorsque les prix d'un produit baissent. Vous recevrez ces alertes par email ou SMS selon vos préférences.
 
-![Alertes sur les baisses de prix](./interface/static/img/screen_alerts.png)
 
 ---
 
 Ces étapes montrent comment l'application permet d'effectuer un scrapping de produits Amazon et de suivre l'évolution de leurs prix. N'hésitez pas à tester l'application et à explorer ces différentes fonctionnalités!
 
 
-## 🚀 Améliorations Futures
+# 🚀 Améliorations Futures
 
 
 ### 1️⃣ Intégration de Notifications pour Alerter sur les Baisses de Prix 📩
@@ -339,7 +338,7 @@ Une version web du projet devait initialement être hébergée sur **AWS** afin 
 
 
 
-## ✨ Auteurs
+# ✨ Auteurs
 
 👤 **Alexandre Videlaine & Parys Noyon**
 
