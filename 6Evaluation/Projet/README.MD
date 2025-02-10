@@ -204,7 +204,21 @@ L’interface utilise plusieurs **endpoints** :
 
 # 🎥 Démo de l'Application
 
-Voici une présentation des différentes étapes d'utilisation de l'application, accompagnée de captures d'écran pour chaque étape clé.
+### Stockage et mise à jour des données
+
+Aucune donnée n'est stockée de base dans l'application. Toutes les informations sont récupérées en temps réel, après avoir suivi un produit. Le suivi des produits s'effectue de manière dynamique et les données sont mises à jour directement après chaque action de suivi.
+
+Pour ajuster la fréquence du suivi automatique, l'intervalle de mise à jour peut être configuré. Par défaut, l'intervalle est défini en heures, mais il est possible de le personnaliser pour effectuer des mises à jour plus fréquentes (par minute ou par seconde). 
+
+Cela est néant-moins déconseillé, car augemnter la fréquence des requettes augmente la chance qu'amazon bloque notre bot de scrapping. Cette section sert seulement à vérifier le bon fonctionnement du code sans attendre plusieures heures
+
+Pour cela, modifie le fichier `task-executer\task_executer.py`, **ligne 93** :
+
+```python
+interval = timedelta(hours=task["interval_hours"])  # /!\ intervale en heures
+```
+---
+Voici maintenant une présentation des différentes étapes d'utilisation de l'application, accompagnée de captures d'écran pour chaque étape clé.
 
 ## 1️⃣ **Page d'Accueil**
 
