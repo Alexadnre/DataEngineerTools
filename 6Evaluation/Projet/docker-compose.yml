@@ -37,6 +37,7 @@ services:
       - mongo-cluster
     volumes:
       - elastic-data:/usr/share/elasticsearch/data
+    restart: always
 
   # Kibana
   kibana:
