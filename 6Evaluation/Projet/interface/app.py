@@ -25,7 +25,6 @@ CORS(app)  # Autoriser toutes les origines (peut être restreint)
 # Charger les variables d'environnement depuis le fichier .env
 # Chargement des variables d'environnement
 MONGO_HOST = os.getenv("MONGO_HOST", "mongo1")
-MONGO_HOST = "localhost"
 MONGO_PORT = os.getenv("MONGO_PORT", "27017")
 MONGO_REPLICA_SET = os.getenv("MONGO_REPLICA_SET", "rs0")
 MONGO_DB = os.getenv("MONGO_DB", "amazon_web_scraper")
@@ -33,7 +32,6 @@ MONGO_DB_TABLE = os.getenv("MONGO_DB_TABLE", "products")
 MONGO_DB_TABLE_TRACKER = os.getenv("MONGO_DB_TABLE_TRACKER", "track_list")
 
 ELASTIC_HOST = os.getenv("ELASTIC_HOST", "elasticsearch")
-ELASTIC_HOST = "localhost"
 ELASTIC_PORT = os.getenv("ELASTIC_PORT", "9200")
 
 # Connexion à MongoDB et Elasticsearch après l'initialisation de Flask
