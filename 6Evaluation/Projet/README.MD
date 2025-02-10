@@ -10,10 +10,10 @@ Le projet repose sur plusieurs composants interconnectés :
 
 - **Flask (interface graphique)** : permet d'interagir avec l'application.
 - **Scraping (scrapping_script.py)** : récupère les données depuis Amazon.
-- **MongoDB** : stocke les produits scrappés.
+- **Mongo1** : stocke les produits scrappés.
 - **Task-executer** : planifie le scrapping automatique.
 - **Mongo-to-Elastic** : transfert les données de MongoDB vers Elasticsearch.
-- **Elasticsearch** : moteur de recherche et d'analyse pour afficher les historiques de prix.
+- **Elasticsearch-db** : moteur de recherche et d'analyse pour afficher les historiques de prix.
 - **Kibana** : visualisation avancée des données.
 
 ### 📌 Schéma global 
@@ -27,7 +27,7 @@ Le projet repose sur plusieurs composants interconnectés :
 
 - **Docker & Docker Compose**
 - **Python 3.9+**
-- **Compte Amazon pour les tests de scrapping**
+
 
 ### 2️⃣ Installation
 
@@ -200,6 +200,73 @@ L’interface utilise plusieurs **endpoints** :
 - `test/test_update.py` : vérifie la mise à jour des prix.
 
 ---
+
+
+# 🎥 Démo de l'Application
+
+Voici une présentation des différentes étapes d'utilisation de l'application, accompagnée de captures d'écran pour chaque étape clé.
+
+## 1️⃣ **Page d'Accueil**
+
+Lorsque vous accédez à l'application, vous êtes accueilli par la page d'accueil. Vous y trouverez les options pour commencer une recherche par mot-clé ou par URL, ainsi qu'un bouton pour visualiser les produits suivis.
+
+
+---
+
+## 2️⃣ **Recherche et Scrapping**
+
+Dans cette section, vous pouvez entrer un mot-clé ou une URL de produit Amazon pour commencer le processus de scrapping. Vous pouvez également définir un délai d'exécution automatique pour le scrapping.
+
+- **Entrée d'un mot-clé ou d'une URL** :
+  
+![Recherche par mot-clé](./interface/static/img/screen_home.png)
+
+- **Configuration du délai d'exécution automatique** :
+
+![Délai d'exécution automatique](./interface/static/img/screen_delay.png)
+
+---
+
+## 3️⃣ **Exécution du Scrapping**
+
+Une fois la recherche lancée, l'application commence à scrapper les données des produits Amazon. Voici un aperçu de l'interface pendant l'exécution du scrapping.
+
+![Exécution du scrapping](./interface/static/img/screen_scrapping.png)
+
+---
+
+## 4️⃣ **Rechercher avec Auto-Complétion**
+
+Grâce à Elasticsearch, l'application vous permet de rechercher facilement des produits avec une fonction d'auto-complétion. Voici un aperçu de la recherche avec auto-complétion en action.
+
+
+![Liste des produits](./interface/static/img/screen_products.png)
+
+---
+
+## 5️⃣ **Suivi des Produits**
+
+Après l'exécution du scrapping, vous pouvez consulter la liste des produits scrappés. Vous pouvez voir des informations comme le prix, le nom du produit, et un graphique interactif montrant l'évolution du prix dans le temps.
+
+
+- **Historique des prix** :
+
+![Historique des prix](./interface/static/img/screen_history.png)
+
+
+
+---
+
+## 6️⃣ **Alertes sur les Baisses de Prix** (Fonctionnalité à venir)
+
+Une fonctionnalité en développement permet de recevoir des alertes lorsque les prix d'un produit baissent. Vous recevrez ces alertes par email ou SMS selon vos préférences.
+
+![Alertes sur les baisses de prix](./interface/static/img/screen_alerts.png)
+
+---
+
+Ces étapes montrent comment l'application permet d'effectuer un scrapping de produits Amazon et de suivre l'évolution de leurs prix. N'hésitez pas à tester l'application et à explorer ces différentes fonctionnalités!
+
 
 ## 🚀 Améliorations Futures
 
