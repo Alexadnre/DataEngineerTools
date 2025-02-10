@@ -4,6 +4,29 @@
 
 > Un projet permettant de scrapper les produits Amazon, en recherchant un mot-clé ou un lien, pour suivre l’évolution des prix et détecter les opportunités.
 
+## Sommaire
+
+1. [🏗️ Architecture du projet](#-architecture-du-projet)
+2. [⚙️ Installation & Configuration](#⚙️-installation--configuration)
+   - [1️⃣ Prérequis](#1️⃣-prérequis)
+   - [2️⃣ Installation](#2️⃣-installation)
+3. [🖥️ Interface Utilisateur](#🖥️-interface-utilisateur)
+   - [📍 1. Recherche & Scrapping](#📍-1-recherche--scrapping)
+   - [📍 2. Consultation des données scrappées](#📍-2-consultation-des-données-scrappées)
+4. [🔍 Détails Techniques](#🔍-détails-techniques)
+   - [📌 Scraping Amazon](#📌-scraping-amazon)
+   - [📌 Variables d'environnement](#📌-variables-denvironnement)
+   - [📌 MongoDB & Replica Set](#📌-mongodb--replica-set)
+   - [📌 Transfert Mongo → Elastic](#📌-transfert-mongo--elastic)
+5. [📡 API & Requêtes](#📡-api--requêtes)
+6. [🛠️ Tests & Développement](#🛠️-tests--développement)
+7. [🎥 Démo de l'Application](#🎥-démo-de-lapplication)
+8. [🚀 Améliorations Futures](#🚀-améliorations-futures)
+
+
+---
+
+
 # 🏗️ Architecture du projet
 
 Le projet repose sur plusieurs composants interconnectés :
@@ -217,6 +240,7 @@ Pour cela, modifie le fichier `task-executer\task_executer.py`, **ligne 93** :
 ```python
 interval = timedelta(hours=task["interval_hours"])  # /!\ intervale en heures
 ```
+Il est ici possible de remplacer **hours=** par **minutes=** ou **seconds=** 
 ---
 Voici maintenant une présentation des différentes étapes d'utilisation de l'application, accompagnée de captures d'écran pour chaque étape clé.
 
