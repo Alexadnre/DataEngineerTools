@@ -27,6 +27,8 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     container_name: ${ELASTICSEARCH_CONTAINER}
     environment:
+      - "ES_JAVA_OPTS=-Xmx512m -Xms512m"  # Limiter la mémoire Java à 512 Mo
+
       - discovery.type=single-node
       - xpack.security.enabled=false
     ports:
