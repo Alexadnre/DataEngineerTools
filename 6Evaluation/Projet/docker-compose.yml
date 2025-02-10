@@ -83,9 +83,9 @@ services:
     depends_on:
       - mongo1
       - mongo-tracker
-    network_mode: "host"
-    # networks:
-    #   - mongo-cluster
+    
+    networks:
+      - mongo-cluster
 
       
   #Task executer
