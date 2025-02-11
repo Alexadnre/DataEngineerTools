@@ -234,6 +234,8 @@ L'application est accessible en ligne à l'adresse suivante :
 
 **[Accéder à l'application](http://15.188.81.242:5000/)**
 
+Les mots clés trackés sont : **processeur**, **RAM DDR5**, **RTX**
+
 Elle est hébergée sur une instance **AWS EC2 t2.medium**, choisie pour ses performances accrues par rapport à une **t2.micro**, qui ne dispose pas d'assez de RAM pour supporter Elastic.
 
 ### 🔧 Mise en place sur AWS
