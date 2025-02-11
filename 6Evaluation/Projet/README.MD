@@ -22,6 +22,7 @@
 5. [📡 API & Requêtes](#📡-api--requêtes)
 6. [🛠️ Tests & Développement](#🛠️-tests--développement)
 7. [🎥 Démo de l'Application](#🎥-démo-de-lapplication)
+    - [🌐 Accès à l'Application en Ligne](#🌐-accès-à-lapplication-en-ligne)
 8. [🚀 Améliorations Futures](#🚀-améliorations-futures)
 
 
@@ -225,27 +226,33 @@ L’interface utilise plusieurs **endpoints** :
 - `test/test_update.py` : vérifie la mise à jour des prix.
 
 ---
-
-
 # 🎥 Démo de l'Application
+
+## 🌐 Accès à l'Application en Ligne
+
+L'application est accessible en ligne à l'adresse suivante : 
+
+**[Accéder à l'application](http://15.188.81.242:5000/)**
+
+Elle est hébergée sur une instance **AWS EC2 t2.medium**, choisie pour ses performances accrues par rapport à une **t2.micro**, qui ne dispose pas d'assez de RAM pour supporter Elastic.
+
+### 🔧 Mise en place sur AWS
+
+Le déploiement s'est effectué via **SSH** en clonant le dépôt Git sur l'instance. Les étapes principales sont :
+1. Connexion à l'instance via SSH.
+2. Installation des dépendances nécessaires (Docker, Python, etc.).
+3. Clonage du dépôt Git contenant le code source.
+4. Lancement de l'application avec Docker.
+
+Cette approche basée sur docker-compose a permis un déploiement rapide et fiable sur l'infrastructure AWS.
 
 ### Stockage et mise à jour des données
 
-Aucune donnée n'est stockée de base dans l'application. Toutes les informations sont récupérées en temps réel, après avoir suivi un produit. Le suivi des produits s'effectue de manière dynamique et les données sont mises à jour directement après chaque action de suivi.
-
-Pour ajuster la fréquence du suivi automatique, l'intervalle de mise à jour peut être configuré. Par défaut, l'intervalle est défini en heures, mais il est possible de le personnaliser pour effectuer des mises à jour plus fréquentes (par minute ou par seconde). 
-
-Cela est néant-moins déconseillé, car augemnter la fréquence des requettes augmente la chance qu'amazon bloque notre bot de scrapping. Cette section sert seulement à vérifier le bon fonctionnement du code sans attendre plusieures heures
-
-Pour cela, modifie le fichier `task-executer\task_executer.py`, **ligne 93** :
+L'application ne stocke aucune donnée localement. Les informations sont récupérées en temps réel lors du suivi des produits. La fréquence des mises à jour peut être ajustée dans le fichier `task-executer\task_executer.py`, ligne **93** :
 
 ```python
-interval = timedelta(hours=task["interval_hours"])  # /!\ intervale en heures
+interval = timedelta(hours=task["interval_hours"])  # /!\ intervalle en heures
 ```
-Il est ici possible de remplacer **hours=** par **minutes=** ou **seconds=** 
----
-Voici maintenant une présentation des différentes étapes d'utilisation de l'application, accompagnée de captures d'écran pour chaque étape clé.
-
 ## 1️⃣ **Page d'Accueil**
 
 Lorsque vous accédez à l'application, vous êtes accueilli par la page d'accueil. Vous y trouverez les options pour commencer une recherche par mot-clé ou par URL, ainsi qu'un bouton pour visualiser les produits suivis.
@@ -365,14 +372,6 @@ Ces étapes montrent comment l'application permet d'effectuer un scrapping de pr
 - **Technologies** :
   - Utilisation de la bibliothèque **pandas** pour générer les fichiers CSV.
   - Utilisation de **xml.etree.ElementTree** pour gérer les exportations au format XML.
-
-### 6️⃣ Exemple de Scraping Hébergé sur AWS
-
-Une version web du projet devait initialement être hébergée sur **AWS** afin de fournir un exemple de scraping en continu. Cette version aurait permis de démontrer l'efficacité du scraping sur une longue période et de montrer les données en temps réel. Cependant, nous avons rencontré plusieurs défis techniques :
-
-- **Problème avec Elasticsearch** : L'instance AWS **t2 du tiers gratuit** était insuffisante pour supporter la charge d'**Elasticsearch**, qui est très gourmand en ressources. Même après avoir mis à niveau l'instance vers une machine plus puissante et configuré les ports correctement, nous n'avons pas réussi à charger **Flask** correctement, en raison d'un problème d'ouverture des ports sur AWS.
-  
-- **Solution à Long Terme** : Ce problème peut être résolu avec **plus de temps** pour ajuster la configuration du serveur, optimiser les performances d'Elasticsearch et tester différentes configurations de ressources.
 
 ---
 
