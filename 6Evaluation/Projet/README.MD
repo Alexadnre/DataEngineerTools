@@ -248,6 +248,11 @@ Le déploiement s'est effectué via **SSH** en clonant le dépôt Git sur l'inst
 
 Cette approche basée sur docker-compose a permis un déploiement rapide et fiable sur l'infrastructure AWS.
 
+## ⚠️Après avoir laissé tourner le serveur, AWS semble avoir bloqué les requettes. Une solution serait de faire une rotation des proxys, pour ne pas avoir des requettes venant que d'une IP.
+
+Cependant, le programme fonctionne en local sans problèmes.
+
+
 ### Stockage et mise à jour des données
 
 L'application ne stocke aucune donnée localement. Les informations sont récupérées en temps réel lors du suivi des produits. La fréquence des mises à jour peut être ajustée dans le fichier `task-executer\task_executer.py`, ligne **93** :
